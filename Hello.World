@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class Hello {
+
+		public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in); 
+		//Scanner class is used to take input from user
+    
+		String inputString = scan.nextLine(); 
+    	
+        
+            System.out.println("Hello, World.");
+            System.out.println(inputString);
+            scan.close();    
+        
+      
+	}
+}

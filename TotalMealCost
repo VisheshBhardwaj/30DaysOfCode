@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class TotalMealCost {
+
+		
+		
+		public static void main(String[] args) {
+			
+			Scanner scan= new Scanner(System.in);
+			
+			double mealCost = scan.nextDouble();
+			int tipPercent = scan.nextInt();
+			int taxPercent = scan.nextInt();
+			
+			double tip = (double)tipPercent*mealCost/100;
+			double tax = (double)taxPercent*mealCost/100;
+			
+			double totalPay=  mealCost+tip+tax ;
+			System.out.println("The total meal cost is "+Math.round(totalPay)+" dollars");
+		
+      scan.close();
+			
+			}
+		
+}

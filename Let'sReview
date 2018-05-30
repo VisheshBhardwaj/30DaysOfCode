@@ -1,0 +1,28 @@
+
+
+import java.util.Scanner;
+
+public class Day6 {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		
+		int i;
+		int T=sc.nextInt();
+
+		
+		
+		for(int x=0;x<T+1;x++) {
+			String s=sc.next();
+			char charArray[]= s.toCharArray();
+			 i= s.length();
+			for(int j=0;j<i;j+=2) {
+				System.out.print(charArray[j]);
+			}
+			System.out.print(" ");
+			for(int k=1;k<i;k+=2) {
+				System.out.print(charArray[k]);
+				}
+					System.out.print("\n");		
+		}
+	}
+}

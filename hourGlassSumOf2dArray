@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class Day11 {
+	int sumBuffer=-9999;
+	int finalSum=-9999;
+	static int[] [] myArray=new int[6][6];
+	public void hourGlassMaxSum() {
+		for(int a=0;a<4;a++) {
+			for(int b=0;b<4;b++) {
+				sumBuffer=myArray[a][b]+myArray[a][b+1]+myArray[a][b+2]+myArray[a+1][b+1]+myArray[a+2][b]+myArray[a+2][b+1]+myArray[a+2][b+2];
+				if(sumBuffer>finalSum) {
+					finalSum=sumBuffer;
+				}else {
+					sumBuffer=0;
+				}
+			}
+		}System.out.println(finalSum);
+	}
+	
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		
+		for(int i=0;i<6;i++) {
+			for(int j=0;j<6;j++) {
+				
+				myArray[i][j]=sc.nextInt();
+			}
+		}
+		
+		Day11 c=new Day11();
+		c.hourGlassMaxSum();
+		
+	}
+
+}

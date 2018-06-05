@@ -1,0 +1,42 @@
+import java.util.*;
+	
+  public class Day10 {
+		
+		public void stackFunc(Stack st,int n) {
+			int buffer=0;
+			int finalValue=0;
+				while(n>0) {
+					
+					int rem = n%2;
+					st.push(rem);
+					n=n/2;
+					}
+				while (!st.isEmpty())
+				{
+				    int a=(int) st.pop();
+				    if(a==1) {
+					   buffer++;
+				   }else {
+					   if(buffer>finalValue) {
+						   finalValue=buffer;
+					   }else {
+						   buffer=0;
+					   }
+				   }
+				}
+				System.out.println(finalValue);
+		}
+		
+		
+	
+	
+	
+	public static void main(String[] args) {
+		  Scanner sc= new Scanner(System.in);	
+		  Stack st=new Stack();
+		
+		  int n= sc.nextInt();
+		  Day10 c=new Day10();
+		  c.stackFunc(st,n);
+	  }
+  }

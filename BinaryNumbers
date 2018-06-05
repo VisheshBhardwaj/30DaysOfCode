@@ -1,29 +1,39 @@
 import java.util.*;
 	
-  public class Day10 {
+public class Day10 {
 		
-		public void stackFunc(Stack st,int n) {
+		public void stackPush(Stack st,int n) {
 			int buffer=0;
 			int finalValue=0;
-				while(n>0) {
+			
+			int rem = n%2;
+			st.push(rem);
+			n=n/2;	
+			while(n>0) {
 					
-					int rem = n%2;
-					st.push(rem);
+					int rem1 = n%2;
+					st.push(rem1);
 					n=n/2;
 					}
-				while (!st.isEmpty())
+				int sizeOfStack=st.size();
+				
+				while(!st.isEmpty())
 				{
-				    int a=(int) st.pop();
-				    if(a==1) {
+				   int a=(int) st.pop();
+				   if(a==1) {
 					   buffer++;
 				   }else {
 					   if(buffer>finalValue) {
-						   finalValue=buffer;
-					   }else {
+						   finalValue=buffer;//110111
+						   }
 						   buffer=0;
 					   }
-				   }
+				}if(rem==1) {
+					if(buffer>finalValue) {
+						finalValue=buffer;
+					}
 				}
+				
 				System.out.println(finalValue);
 		}
 		
@@ -32,11 +42,12 @@ import java.util.*;
 	
 	
 	public static void main(String[] args) {
-		  Scanner sc= new Scanner(System.in);	
-		  Stack st=new Stack();
+		Scanner sc= new Scanner(System.in);	
+		Stack st=new Stack();
 		
-		  int n= sc.nextInt();
-		  Day10 c=new Day10();
-		  c.stackFunc(st,n);
-	  }
-  }
+		int n= sc.nextInt();
+		Day10 c=new Day10();
+		c.stackPush(st,n);
+	}
+
+}

@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Solution {
+
+      public static void main(String[] args) {
+			
+			Scanner sc=new Scanner(System.in);
+			int n=sc.nextInt();
+			int [] qwe=new int [n];
+			for(int i=0;i<n;i++) {
+				qwe[i]=sc.nextInt();
+				}
+        
+        int swaping=0;
+			for(int x=n;x>0;x--) {
+				for(int y=0;y<x-1;y++) {
+					if(qwe[y]>qwe[y+1]) {
+						int buffer=qwe[y];
+						qwe[y]=qwe[y+1];
+						qwe[y+1]=buffer;
+						buffer=0;
+						swaping++;
+					}
+				}
+			}
+	
+			System.out.println("Array is sorted in "+swaping+" swaps.");
+			System.out.println("First Element: "+qwe[0]);
+			System.out.println("Last Element: "+qwe[n-1]);
+
+		}
+}

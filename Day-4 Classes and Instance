@@ -1,0 +1,47 @@
+ 
+
+import java.util.Scanner;
+
+public class Person {
+
+		int iage;
+		public Person(int age) {
+			iage=age;
+			if(iage<0) {
+				System.out.println("negetive age is not allowed");
+				iage=0;
+			}
+		}
+		void amIOld(){
+				if(iage<13) {
+					System.out.println("You are young.");
+					
+				}if(iage>=13&&iage<18) {
+					System.out.println("You are teenager.");
+					
+				}if(iage>=18) {
+					System.out.println("You are old.");
+					
+				}
+			}
+		
+		void yearPasses() {
+			iage=iage+1;
+		}
+
+		public static void main(String[] args) {
+			Scanner sc = new Scanner(System.in);
+			int T = sc.nextInt();
+			for (int i = 0; i < T; i++) {
+				int age = sc.nextInt();
+				Day4 p = new Day4(age);
+				p.amIOld();
+				for (int j = 0; j < 3; j++) {
+					p.yearPasses();
+				}
+				p.amIOld();
+				System.out.println();
+	        }
+			sc.close();
+	    }
+	}

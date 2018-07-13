@@ -1,0 +1,42 @@
+package start;
+
+import java.util.Scanner;
+
+public class Day26 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		// Input dates, months and year
+		int Da = sc.nextInt();
+		int Ma = sc.nextInt();
+		int Ya = sc.nextInt();
+		int De = sc.nextInt();
+		int Me = sc.nextInt();
+		int Ye = sc.nextInt();
+		//Logic of Constraints
+		if(Da<32&&Da>0&&De<32&&De>0) {
+			if(Ma<13&&Ma>0&&Me<13&&Me>0) {
+				if(Ya<3000&&Ya>0&&Ye<3000&&Ye>0) {
+					//Logic of Fine
+					if(Ya==Ye&&Ma==Me&&Da>De) {
+						int fine= Da-De;
+						System.out.println(fine*15);
+					}if(Ya==Ye&&Ma>Me) {
+						int fine= Ma-Me;
+						System.out.println(fine*500);
+					}if(Ya>Ye) {
+						System.out.println("10000");
+					}else if(Ya<Ye||Ma<Me||Da<De){
+						System.out.println("0");
+					}
+				}else {
+					System.out.println("Invalid Years");
+				}
+			}else {
+				System.out.println("Invalid Months");
+			}
+		}else {
+			System.out.println("Invalid Dates");
+		}
+	}
+}

@@ -1,0 +1,52 @@
+import java.util.Scanner;
+
+public class Day25 {
+	public void primeCheck(int x) {
+		//Case 1: When Input is 1 
+		if(x==1) {
+			System.out.println("Not prime");
+		}
+		//Case 2: When Input is 2
+		else if(x==2) {
+			System.out.println("Prime");
+		}
+		//Case 3: When input is greater then 2
+		else {
+			int i=1;
+		/*Logic: Want to find i which satisfies i^2<n */	
+			while(i<x/2) {
+				if((int)Math.pow(i, 2)>x) {
+				break;
+				}else {
+				i++;
+				}
+		}
+		//divide all the numbers till i by loop. Is remainder of any division is 0 then n is Not prime else Prime. 	
+			int j=2;
+			while(j<=i) {
+				if(x%j==0) {
+					System.out.println("Not prime");
+					break;
+				}else {
+					if(j==i) {
+						System.out.println("Prime");
+					}j++;
+				}
+			}
+		}
+	}
+	
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+			int T= sc.nextInt();
+		if(T>0&&T<31) {
+			for(int w=0;w<T+1;w++) {
+				int n=sc.nextInt();
+				Day25 q=new Day25();
+				q.primeCheck(n);
+			}
+		}else {
+			System.out.println("Number of test cases out of bound");
+			}
+	  }
+              }
